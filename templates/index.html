@@ -30,10 +30,10 @@
         <button type="submit">Compare It!</button>
       </form>
       <div class="message">
-        {% if largest %}
-            The largest number is: <strong>{{largest}}</strong>
-        {% else %}
+        {% if largest == '0.00' %}
             Please enter three numbers.
+        {% else %}
+            The largest number is: <strong>{{largest}}</strong>
         {% endif %}
       </div>
     </main>

@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    largest = None
+    largest = 0
     if request.method == 'POST':
-        largest = None
+        largest = 0
         num1 = float(request.form['num1'])
         num2 = float(request.form['num2'])
         num3 = float(request.form['num3'])
