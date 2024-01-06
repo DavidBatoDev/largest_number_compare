@@ -1,17 +1,35 @@
-# imports
-from flask import Flask, render_template
+# import the request module from flask
+from flask import Flask, render_template, request
 
-# initialize the app by using flask
 app = Flask(__name__)
 
-# create a main route for the app to be displayed in the web
-@app.route('/')
-# render the html file for this app using a function
+
+# to get the data from the form we need to use the request object
+# lets add a methods argument to the route decorator
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    # define a variable to hold the largest number
+    largest = None
+    # define a variable to hold the messagee'
+    # logic:
+    # 1. check if the request method is post (basically checked if the form is submitted)
+    if request.method == 'POST':
+        # 2. get the numbers data from the form with request object using request.form
+        num1 = request.form['num1']
+        num2 = request.form['num2']
+        num3 = request.form['num3']
+        # compare the numbers to find the largest
+        if num1 > num2 and num1 > num3:
+            largest = num1
+        elif num2 > num1 and num2 > num3:
+            largest = num2
+        else:
+            largest = num3
+        # set the message
 
+    # render the template with the largest and the message
+    return render_template('index.html', largest=largest)
 
-# added a condition that runs the app and set the debugger to True for development
 if __name__ == '__main__':
     app.run(debug=True)
 
