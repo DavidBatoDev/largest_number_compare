@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <!-- creating a form for the app that guesses the number -->
-    <form>
-        <label for="num1">Input the first number:</label>
-        <input type="number" name="num1" required>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+  </head>
+  <body>
+    <main>
+      <form>
+        <div class="form-group">
+          <label for="num1">Input the first number:</label>
+          <input type="number" name="num1" required />
+        </div>
 
-        <label for="num2">Input the second number:</label>
-        <input type="number" name="num2" required>
+        <div class="form-group">
+          <label for="num2">Input the second number:</label>
+          <input type="number" name="num2" required />
+        </div>
 
-        <label for="num3">Input the third number:</label>
-        <input type="number" name="num3" required>
+        <div class="form-group">
+          <label for="num3">Input the third number:</label>
+          <input type="number" name="num3" required />
+        </div>
 
         <button type="submit">Compare It!</button>
-    </form>
-</body>
+      </form>
+      <div class="message">
+        The largest number is: <strong>0</strong>
+      </div>
+    </main>
+  </body>
 </html>

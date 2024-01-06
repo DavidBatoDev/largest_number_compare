@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: beige;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+main {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #333;
+    padding: 20px;
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group > label {
+    font-weight: bold;
+}
+
+.form-group > input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+.form-group > input:focus {
+    outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 5px #333;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    height: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+main > .message {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+    
