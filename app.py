@@ -15,9 +15,9 @@ def index():
     # 1. check if the request method is post (basically checked if the form is submitted)
     if request.method == 'POST':
         # 2. get the numbers data from the form with request object using request.form
-        num1 = request.form['num1']
-        num2 = request.form['num2']
-        num3 = request.form['num3']
+        num1 = float(request.form['num1'])
+        num2 = float(request.form['num2'])
+        num3 = float(request.form['num3'])
         # compare the numbers to find the largest
         if num1 > num2 and num1 > num3:
             largest = num1
