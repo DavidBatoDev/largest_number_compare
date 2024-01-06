@@ -11,7 +11,7 @@
   </head>
   <body>
     <main>
-      <form>
+      <form action="/" method="POST">
         <div class="form-group">
           <label for="num1">Input the first number:</label>
           <input type="number" name="num1" required />
@@ -30,7 +30,11 @@
         <button type="submit">Compare It!</button>
       </form>
       <div class="message">
-        The largest number is: <strong>0</strong>
+        {% if largest %}
+            The largest number is: <strong>{{largest}}</strong>
+        {% else %}
+            Please enter three numbers.
+        {% endif %}
       </div>
     </main>
   </body>
